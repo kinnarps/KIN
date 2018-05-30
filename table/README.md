@@ -9,6 +9,7 @@
 * `loader`	: Default true, will display a loader on table update
 * `loadermsg`	: String with a message to display under the loader
 * `ondataloaded`: Callback event that is fired when the data has loaded, data object is sent as a parameter
+* `rowformatter`: Callback event that is fired on each row print, row html and row data object is sent as parameters
 * `columns`	: Array of objects containing configuration of the columns
 * `actions`	: Array of objects containing row actions
 
@@ -36,6 +37,7 @@ var table = KIN.table.init({
 	loader			: true,
 	loadermsg		: 'Loading',
 	ondataloaded		: function(data){},
+	rowformatter		: function(rowobject,rowdata){},
 	columns : [
 			{"type": "1", "columnname":"Title", "columnwidth":"2", "datafield":"title",formatter : formatTitleCol},
 			{"type": "1", "columnname":"Publish date", "columnwidth":"2", "datafield":"publishDate"},
