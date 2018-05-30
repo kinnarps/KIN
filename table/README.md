@@ -2,7 +2,7 @@
 
 ## Description of parameters
 * `wrapperelement`: String containing element selector of where to put the table
-* `dataurl` 	: Url for fetching table data
+* `dataurl` 	: Url for fetching table data (see [data.json](https://github.com/kinnarps/KIN/blob/master/table/data.json))
 * `hitsperpage` : Number of hits per page
 * `stylesize`	: String "small" smaller font i rows
 * `density`	: Column padding, medium is default. Possible values are 'narrow','medium','large'
