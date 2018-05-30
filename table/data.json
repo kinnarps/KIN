@@ -1,0 +1,26 @@
+{
+	"hits": 159,
+  "currentPage": 0,
+	"items": [{
+		"title": "ParentArticleID",
+		"viewurl": "/news/-/view/parentarticleid",
+		"editUrl": "http://selt26375:8080/my-content?p_p_id=editor_WAR_KinnarpsEditorportlet&p_p_lifecycle=0&p_p_state=pop_up&p_p_mode=view&_editor_WAR_KinnarpsEditorportlet_struts_action=%2Fjournal%2Fedit_article&_editor_WAR_KinnarpsEditorportlet_groupId=2171401&_editor_WAR_KinnarpsEditorportlet_doAsGroupId=2171401&_editor_WAR_KinnarpsEditorportlet_structureId=2220013&_editor_WAR_KinnarpsEditorportlet_articleId=2238801&_editor_WAR_KinnarpsEditorportlet_version=1.3&p_p_auth=okinRLdc",
+		"modifiedDate": "30/11/17",
+		"publishDate": "30/11/17",
+		"articleId": "2238801"
+	}, {
+		"title": "Free jobs",
+		"viewurl": "/news/-/view/lediga-jobb",
+		"editUrl": "http://selt26375:8080/my-content?p_p_id=editor_WAR_KinnarpsEditorportlet&p_p_lifecycle=0&p_p_state=pop_up&p_p_mode=view&_editor_WAR_KinnarpsEditorportlet_struts_action=%2Fjournal%2Fedit_article&_editor_WAR_KinnarpsEditorportlet_groupId=2171401&_editor_WAR_KinnarpsEditorportlet_doAsGroupId=2171401&_editor_WAR_KinnarpsEditorportlet_structureId=2220013&_editor_WAR_KinnarpsEditorportlet_articleId=2235240&_editor_WAR_KinnarpsEditorportlet_version=1.0&p_p_auth=okinRLdc",
+		"modifiedDate": "15/11/17",
+		"publishDate": "15/11/17",
+		"articleId": "2235240"
+	}, {
+		"title": "It looks like Sandpeople did this",
+		"viewurl": "/news/-/view/it-looks-like-sandpeople-did-this",
+		"editUrl": "http://selt26375:8080/my-content?p_p_id=editor_WAR_KinnarpsEditorportlet&p_p_lifecycle=0&p_p_state=pop_up&p_p_mode=view&_editor_WAR_KinnarpsEditorportlet_struts_action=%2Fjournal%2Fedit_article&_editor_WAR_KinnarpsEditorportlet_groupId=2171401&_editor_WAR_KinnarpsEditorportlet_doAsGroupId=2171401&_editor_WAR_KinnarpsEditorportlet_structureId=2220013&_editor_WAR_KinnarpsEditorportlet_articleId=2220237&_editor_WAR_KinnarpsEditorportlet_version=3.5&p_p_auth=okinRLdc",
+		"modifiedDate": "06/12/17",
+		"publishDate": "17/08/17",
+		"articleId": "2220237"
+	}]
+}
