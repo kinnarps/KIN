@@ -23,8 +23,14 @@
 ## Description of action object
 * `title`	: Action title
 * `parameter`	: Callback parameters sent to the callback function, possible to send a plain string or return data from the dataobject. To return a data object wrapp your data-field inside a $[]. You can also pass an object with multiple parameters.
-* `icon'	: Icon that will show up to the left of the title. See [Icon reference](http://liferay.github.io/alloy-bootstrap/base-css.html#icons) for a list of icons.
-* `callback'	: Callback function for executing the action
+* `icon`	: Icon that will show up to the left of the title. See [Icon reference](http://liferay.github.io/alloy-bootstrap/base-css.html#icons) for a list of icons.
+* `callback`	: Callback function for executing the action
+
+## Methods
+* `KIN.table.update` : Re-paints the table
+
+## Properties
+* `KIN.table.urlparameters` : Adds additional parameters to the update request
 
 ## Example 
 ```javascript
@@ -79,4 +85,11 @@ function deleteArticle(parameters){
 		}
 	})
 }
+
+$(document).on("change","#some-element",function(){		
+		KIN.table.urlparameters.status = "some-value; 		
+		KIN.table.urlparameters.searchKey = "some-value";
+		KIN.table.update();
+	});
+
 ```
