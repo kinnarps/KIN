@@ -87,6 +87,7 @@ function deleteArticle(parameters){
 }
 
 $(document).on("change","#some-element",function(){		
+		/*This will add some temporary parameters to the table update request*/
 		KIN.table.urlparameters.status = "some-value"; 		
 		KIN.table.urlparameters.searchKey = "some-value";
 		KIN.table.update();
