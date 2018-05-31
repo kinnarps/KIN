@@ -12,6 +12,8 @@
 * `rowformatter`: Callback event that is fired on each row print, row html and row data object is sent as parameters
 * `columns`	: Array of objects containing configuration of the columns
 * `actions`	: Array of objects containing row actions
+* `beforeupdate`: Callback to be executed before updating table
+* `savestate`	: Table state (paginator,hitsperpage) is saved in sessionStorage
 
 ## Description of column object
 * `type`	: Option 1 string value column,2 Sortable column, Option 3 action menu column
@@ -36,6 +38,7 @@ Option 2 for column type will add two additional parameters to KIN.table.urlpara
 
 ## Properties
 * `KIN.table.urlparameters` : Adds additional parameters to the update request
+* `KIN.table.statevalues` : Adds additional parameters to the sessionStorage object (Ex. KIN.table.statevalues.myprop = "myvalue";)
 
 ## Example 
 ```javascript
