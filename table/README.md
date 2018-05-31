@@ -14,7 +14,7 @@
 * `actions`	: Array of objects containing row actions
 
 ## Description of column object
-* `type`	: Option 1 value column, Option 2 action menu column
+* `type`	: Option 1 string value column,2 Sortable column, Option 3 action menu column
 * `columnname`	: Header name of column
 * `columnwidth`	: Width of column, uses bootstrap responsive columns. All columns must sum up to a value of maximum of 12
 * `datafield`	: Name of data field to be used as a value
@@ -25,6 +25,11 @@
 * `parameter`	: Callback parameters sent to the callback function, possible to send a plain string or return data from the dataobject. To return a data object wrapp your data-field inside a $[]. You can also pass an object with multiple parameters.
 * `icon`	: Icon that will show up to the left of the title. See [Icon reference](http://liferay.github.io/alloy-bootstrap/base-css.html#icons) for a list of icons.
 * `callback`	: Callback function for executing the action
+
+## Description of sortable column
+Option 2 for column type will add two additional parameters to KIN.table.urlparameters when the user click on the sort arrows. 
+* `sortby`	: Parameter that contains the column data name
+* `sortdirection`: Parameter containing either asc or desc depening on which arrow the user clicked on
 
 ## Methods
 * `KIN.table.update` : Re-paints the table
