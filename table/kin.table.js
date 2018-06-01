@@ -17,6 +17,7 @@ KIN.table = {
 			
 			if(tablestate){
 				tablestate = JSON.parse(tablestate);
+				KIN.table.tablestate = tablestate;
 				this.hitsperpage = tablestate.hitsperpage
 				this.pagenumber = tablestate.pagenumber
 				this.tablestate = tablestate
@@ -37,15 +38,15 @@ KIN.table = {
 			this.parameterurl = this.parameterurl + "&hitsPerPage="+this.hitsperpage+"&pagenumber="+this.pagenumber;
 			
 			if(tablestate){
-				for (var member in KIN.table.statevalues) {
-					_this.parameterurl = _this.parameterurl + "&"+tablestate[member]+"="+ KIN.table.statevalues[member] 
+				for (var member in tablestate) {
+					_this.parameterurl = _this.parameterurl + "&"+member+"="+ tablestate[member]
 				}
 			}
-			console.log(this.parameterurl)
+			
 			if(this.loader){
 				KIN.ui.page_loader.show({text:this.loadermsg})
 			}
-			
+			console.log(this.parameterurl)
 			$.when(
 					this.getPromise(this.parameterurl)
 			).then(function(response){
@@ -105,10 +106,18 @@ KIN.table = {
 			}
 			
 			if(this.savestate){
-				var tablestate = sessionStorage.getItem('tablestate');
+				var tablestate = {
+						hitsperpage : _this.hitsperpage,
+						pagenumber : _this.pagenumber
+				}
+				for (var member in KIN.table.statevalues) {
+					tablestate[member] = KIN.table.statevalues[member] 
+				}
+				sessionStorage.setItem('tablestate',JSON.stringify(tablestate));
+				/*var tablestate = sessionStorage.getItem('tablestate');
 			
 				if(tablestate){
-					tablestate = JSON.parse(tablestate);
+					//tablestate = JSON.parse(tablestate);
 					tablestate.hitsperpage = _this.hitsperpage
 					tablestate.pagenumber = _this.pagenumber
 					for (var member in KIN.table.statevalues) {
@@ -124,7 +133,7 @@ KIN.table = {
 						tablestate[member] = KIN.table.statevalues[member] 
 					}
 					sessionStorage.setItem('tablestate',JSON.stringify(tablestate));
-				}
+				}*/
 			}
 	
 			this.parameterurl = this.dataurl + "&hitsPerPage="+this.hitsperpage+"&pagenumber="+this.pagenumber;
@@ -145,8 +154,8 @@ KIN.table = {
 					if(_this.loader){
 						KIN.ui.page_loader.destroy()
 					}
-					if ( (config || {}).onComplete && typeof(config.onComplete) === 'function') 
-						config.onComplete();
+					if ( (_this.config || {}).afterupdate && typeof(_this.config.afterupdate) === 'function') 
+						_this.config.afterupdate(response);
 			});
 		},
 		getHtmlHeaders : function(columns){
@@ -326,6 +335,18 @@ KIN.table = {
 				$(".actions__row").removeClass("open");
 				$(".wrapper__actions").removeClass("open");
 			}
+		},
+		addurlparameter : function(key,value){
+			this.urlparameters[key] = value;
+		},
+		removeurlparameter : function(key){
+			delete this.urlparameters[key];
+		},
+		addstatevalue : function(key,value){
+			this.statevalues[key] = value;
+		},
+		removestatevalue : function(key){
+			delete this.statevalues[key];
 		},
 		portletNamespace : "",
 		currentUrl:"",
