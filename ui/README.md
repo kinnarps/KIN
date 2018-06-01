@@ -1,6 +1,6 @@
 # KIN.ui
 
-[KIN.ui.page_loader](#kinuipage_loader)
+[KIN.ui.page_loader](#kinuipage_loader)<br/>
 [KIN.ui.button_loader](#kinuibutton_loader)
 
 ## KIN.ui.page_loader
