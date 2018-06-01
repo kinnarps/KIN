@@ -102,3 +102,36 @@ $(document).on("change","#some-element",function(){
 	});
 
 ```
+
+## Example saving states to a search input field
+```
+$(document).ready(function(){
+	$("#my-content-search").on("keyup",function(e){
+		if($(this).val().length > 3){
+			KIN.table.urlparameters.searchKey = $("#my-content-search").val();
+			KIN.table.statevalues.searchKey = $("#my-content-search").val();
+			KIN.table.update();
+		}else if ($(this).val().length == 0){
+			KIN.table.urlparameters.searchKey = "";
+			KIN.table.statevalues.searchKey = '';
+			KIN.table.update();
+		}
+	});
+	
+	var table = KIN.table.init({
+		wrapperelement	 	: ".custom-table",
+		dataurl			: "<%= getPublishedContentUrl %>",
+		savestate		: true,
+		ondataloaded		: function(data){
+						//Get my custom saved state value from sessionStorage and set value of the search field
+						if(table.tablestate && table.tablestate.searchKey){
+							$("#my-content-search").val(table.tablestate.searchKey)
+						}
+						return data;/*Init callback when data is loaded*/
+					},
+		columns : [
+					{"type": "1", "columnname":"Title", "columnwidth":"2", "datafield":"title"},
+		]
+	})
+})
+```
