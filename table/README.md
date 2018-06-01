@@ -67,7 +67,7 @@ var table = KIN.table.init({
 			{"type": "2", "columnname":"Publish date", "columnwidth":"2", "datafield":"publishDate"},
 			{"type": "2", "columnname":"Modified date", "columnwidth":"3", "datafield":"modifiedDate"},
 			{"type": "1", "columnname":"Type", "columnwidth":"3", "datafield":"structureName"},
-			{"type": "2", "columnname":"", "columnwidth":"2"}
+			{"type": "3", "columnname":"", "columnwidth":"2"}
 	],
 	actions : [
 		{"title": '<liferay-ui:message key="edit" />', parameter: "$[editUrl]", "icon": "icon-edit",callback:editArticle},
