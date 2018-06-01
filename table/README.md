@@ -35,10 +35,14 @@ Option 2 for column type will add two additional parameters to KIN.table.urlpara
 
 ## Methods
 * `KIN.table.update` : Re-paints the table
+* `KIN.table.addurlparameter(key,value)` : Adds additional parameters to the update request
+* `KIN.table.removeurlparameter(key)`
+* `KIN.table.addstatevalue(key,value)` : Adds additional parameters to the table statae sessionStorage object
+* `KIN.table.removestatevalue(key)`
 
 ## Properties
-* `KIN.table.urlparameters` : Adds additional parameters to the update request
-* `KIN.table.statevalues` : Adds additional parameters to the table statae sessionStorage object (Ex. KIN.table.statevalues.myprop = "myvalue";)
+* `KIN.table.urlparameters` : Custom parameter object
+* `KIN.table.statevalues` : Session storage object
 
 ## Example 
 ```javascript
@@ -50,12 +54,15 @@ var table = KIN.table.init({
 	density			: 'narrow',
 	loader			: true,
 	loadermsg		: 'Loading',
+	savestate		: boolean,
+	beforeupdate		: function(){/*Before table is updated, set state and urlparameters for example*/},
+	afterupdate		: function(data){}
 	ondataloaded		: function(data){},
 	rowformatter		: function(rowobject,rowdata){},
 	columns : [
 			{"type": "1", "columnname":"Title", "columnwidth":"2", "datafield":"title",formatter : formatTitleCol},
-			{"type": "1", "columnname":"Publish date", "columnwidth":"2", "datafield":"publishDate"},
-			{"type": "1", "columnname":"Modified date", "columnwidth":"3", "datafield":"modifiedDate"},
+			{"type": "2", "columnname":"Publish date", "columnwidth":"2", "datafield":"publishDate"},
+			{"type": "2", "columnname":"Modified date", "columnwidth":"3", "datafield":"modifiedDate"},
 			{"type": "1", "columnname":"Type", "columnwidth":"3", "datafield":"structureName"},
 			{"type": "2", "columnname":"", "columnwidth":"2"}
 	],
