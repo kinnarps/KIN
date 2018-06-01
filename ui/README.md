@@ -1,5 +1,7 @@
 # KIN.ui
 
+[KIN.ui.page_loader](#kinuipage_loader)
+
 ## KIN.ui.page_loader
 Displays a standardised loader
 
