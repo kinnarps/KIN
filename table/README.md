@@ -103,13 +103,19 @@ $(document).on("change","#some-element",function(){
 
 ```
 
+
 ## Example saving states to a search input field
 ```
 $(document).ready(function(){
 	$("#my-content-search").on("keyup",function(e){
 		if($(this).val().length > 3){
+			//Add my search key to the dataurl
 			KIN.table.urlparameters.searchKey = $("#my-content-search").val();
+			
+			//Add my search key to the session storage
 			KIN.table.statevalues.searchKey = $("#my-content-search").val();
+			
+			//Update table
 			KIN.table.update();
 		}else if ($(this).val().length == 0){
 			KIN.table.urlparameters.searchKey = "";
