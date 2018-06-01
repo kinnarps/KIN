@@ -13,7 +13,9 @@
 * `columns`	: Array of objects containing configuration of the columns
 * `actions`	: Array of objects containing row actions
 * `beforeupdate`: Callback to be executed before updating table
+* `afterupdate`	: Callback to be executed after updating table, contains the response object
 * `savestate`	: boolean should table state (paginator,hitsperpage) be saved in sessionStorage
+* `addstatetourl` : Will add each sessionStorage object as a parameter to your dataurl if set to true.
 
 ## Description of column object
 * `type`	: Option 1 string value column,2 Sortable column, Option 3 action menu column
