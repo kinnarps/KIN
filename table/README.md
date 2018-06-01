@@ -138,7 +138,7 @@ $(document).ready(function(){
 		savestate		: true,
 		ondataloaded		: function(data){
 						//Get my custom saved state value from sessionStorage and set value of the search field
-						if(table.tablestate && table.tablestate.searchKey){
+						if(((table || {}).tablestate || {}).searchKey){
 							$("#my-content-search").val(table.tablestate.searchKey)
 						}
 						return data;/*Init callback when data is loaded*/
