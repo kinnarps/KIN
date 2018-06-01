@@ -7,8 +7,8 @@
 Displays a standardised loader
 
 #### Methods
-* `show` : Displays the loader
-* `destroy` : Removs the loader
+*`show` : Displays the loader
+*`destroy` : Removs the loader
 
 #### Example
 ```javascript
