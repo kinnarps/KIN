@@ -4,7 +4,7 @@
 * `wrapperelement`: String containing element selector of where to put the table
 * `dataurl` 	: Url for fetching table data (see [data.json](https://github.com/kinnarps/KIN/blob/master/table/data.json))
 * `hitsperpage` : Number of hits per page
-* `stylesize`	: String "small" smaller font i rows
+* `stylesize`	: String "small" smaller row font
 * `density`	: Column padding, medium is default. Possible values are 'narrow','medium','large'
 * `loader`	: Default true, will display a loader on table update
 * `loadermsg`	: String with a message to display under the loader
