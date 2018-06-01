@@ -104,6 +104,7 @@ $(document).on("change","#some-element",function(){
 ```
 
 
+
 ## Example saving states to a search input field
 ```
 $(document).ready(function(){
