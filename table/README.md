@@ -55,8 +55,9 @@ var table = KIN.table.init({
 	loader			: true,
 	loadermsg		: 'Loading',
 	savestate		: boolean,
+	addstatetourl		: boolean,
 	beforeupdate		: function(){/*Before table is updated, set state and urlparameters for example*/},
-	afterupdate		: function(data){}
+	afterupdate		: function(data){},
 	ondataloaded		: function(data){},
 	rowformatter		: function(rowobject,rowdata){},
 	columns : [
@@ -113,20 +114,17 @@ $(document).on("change","#some-element",function(){
 
 
 ## Example saving states to a search input field
+Note that if you set addstatetourl to true you dont have to use addurlparameter as the state values will be appended as parameters to your dataurl. 
 ```javascript
 $(document).ready(function(){
 	$("#my-content-search").on("keyup",function(e){
-		if($(this).val().length > 3){
-			//Add my search key to the dataurl
-			KIN.table.urlparameters.searchKey = $("#my-content-search").val();
-			
+		if($(this).val().length > 3){					
 			//Add my search key to the session storage
 			KIN.table.statevalues.searchKey = $("#my-content-search").val();
 			
 			//Update table
 			KIN.table.update();
 		}else if ($(this).val().length == 0){
-			KIN.table.urlparameters.searchKey = "";
 			KIN.table.statevalues.searchKey = '';
 			KIN.table.update();
 		}
@@ -136,6 +134,7 @@ $(document).ready(function(){
 		wrapperelement	 	: ".custom-table",
 		dataurl			: "<%= getPublishedContentUrl %>",
 		savestate		: true,
+		addstatetourl		: true,
 		ondataloaded		: function(data){
 						//Get my custom saved state value from sessionStorage and set value of the search field
 						if(((table || {}).tablestate || {}).searchKey){
