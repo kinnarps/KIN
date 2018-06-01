@@ -1,6 +1,7 @@
 # KIN.ui
 
 [KIN.ui.page_loader](#kinuipage_loader)
+[KIN.ui.button_loader](#kinuibutton_loader)
 
 ## KIN.ui.page_loader
 Displays a standardised loader
@@ -17,3 +18,6 @@ Displays a standardised loader
   
   KIN.ui.page_loader.destroy()  
 ```
+
+## KIN.ui.button_loader
+Displays a loader inside a button
