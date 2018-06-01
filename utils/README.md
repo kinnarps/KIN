@@ -4,7 +4,7 @@
 
 Displays a standardised popup modal that can be used for informational message och to confirm an actions, fully responsive.
 
-### Parameters
+#### Parameters
 * `theme` : Color of the popup - lemon-yellow,flamingo-pink,chili-red default value is spring-green
 * `closeOnOk` : boolean, should the popup close if user pushes the ok button
 * `onOk` : required callback function to trigger on ok
