@@ -5,10 +5,10 @@
 Displays a standardised popup modal that can be used for informational message och to confirm an actions, fully responsive.
 
 #### Parameters
-`theme` : Color of the popup - lemon-yellow,flamingo-pink,chili-red default value is spring-green
-`closeOnOk` : boolean, should the popup close if user pushes the ok button
-`onOk` : required callback function to trigger on ok
-`onCancel` : optional callback function to trigger on cancel, if parameter is omitted no cancel button will be added to the popup
+* `theme` : Color of the popup - lemon-yellow,flamingo-pink,chili-red default value is spring-green
+* `closeOnOk` : boolean, should the popup close if user pushes the ok button
+* `onOk` : required callback function to trigger on ok
+* `onCancel` : optional callback function to trigger on cancel, if parameter is omitted no cancel button will be added to the popup
 
 ```javascript
 KIN.utils.confirm_custom({
