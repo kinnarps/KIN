@@ -1,7 +1,7 @@
 # KIN.utils
-Displays a standardised popup modal that can be used for informational message och to confirm an actions, fully responsive.
 
 ## KIN.utils.confirm_custom
+Displays a standardised popup modal that can be used for informational message och to confirm an actions, fully responsive.
 
 ```javascript
   KIN.utils.confirm_custom({
