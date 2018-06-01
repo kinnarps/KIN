@@ -102,11 +102,11 @@ $(document).on("change","#some-element",function(){
 	});
 
 ```
-
+<br /><br />
 
 
 ## Example saving states to a search input field
-```
+```javascript
 $(document).ready(function(){
 	$("#my-content-search").on("keyup",function(e){
 		if($(this).val().length > 3){
