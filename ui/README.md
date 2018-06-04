@@ -4,7 +4,8 @@
 [KIN.ui.button_loader](#kinuibutton_loader)
 
 ## KIN.ui.page_loader
-Displays a standardised loader
+Displays a standardised loader <br />
+![Image of page loader](https://raw.githubusercontent.com/kinnarps/KIN/master/ui/resources/KIN_ui_page_loader.gif)
 
 #### Methods
 * `show` : Displays the loader
@@ -21,7 +22,7 @@ Displays a standardised loader
 
 ## KIN.ui.button_loader
 Displays a loader inside a button<br />
-![Image of loader](https://raw.githubusercontent.com/kinnarps/KIN/master/ui/resources/KIN_ui_button_loader.gif)
+![Image of button loader](https://raw.githubusercontent.com/kinnarps/KIN/master/ui/resources/KIN_ui_button_loader.gif)
 
 #### Example
 ```html
