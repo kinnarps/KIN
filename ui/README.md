@@ -21,7 +21,7 @@ Displays a standardised loader
 
 ## KIN.ui.button_loader
 Displays a loader inside a button<br />
-![Image of loader](https://raw.githubusercontent.com/kinnarps/KIN/master/ui/resources/KIN_ui_button_loader.PNG)
+![Image of loader](https://raw.githubusercontent.com/kinnarps/KIN/master/ui/resources/KIN_ui_button_loader.gif)
 
 #### Example
 ```html
