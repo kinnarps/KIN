@@ -34,11 +34,11 @@ $(document).ready(function(){
 			element:this,
 			theme:"kin-black"
 		});
-	});
-  
-  	/* Do something */
-	KIN.ui.button_loader.destroy({  
-		element:'.button-element'
+		
+		/* Do something */
+		KIN.ui.button_loader.destroy({  
+			element:'.button-element'
+		});
 	});
 });
 </script>
