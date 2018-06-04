@@ -21,3 +21,26 @@ Displays a standardised loader
 
 ## KIN.ui.button_loader
 Displays a loader inside a button
+
+#### Example
+```
+<a href="javascript:void(0)" class="btn btn-default"><span class="button__text">My button text</span></a>
+
+<script>
+$(document).ready(function(){
+  $(".btn-default").on("click",function(){
+    KIN.ui.button_loader.display({
+      element:this,
+      theme:"kin-black"
+    });
+  });
+  
+  /* Do something */
+  KIN.ui.button_loader.destroy({  
+				element:'.button-element'
+	})
+  
+});
+</script>
+
+```
