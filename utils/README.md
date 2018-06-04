@@ -1,7 +1,7 @@
 # KIN.utils
 
 [KIN.utils.confirm_custom](#kinutilsconfirm_custom)<br />
-[KIN.utils.initGallery](#kinutilsinitgallery_loader)
+[KIN.utils.initGallery](#kinutilsinitgallery)
 
 ## KIN.utils.confirm_custom
 
