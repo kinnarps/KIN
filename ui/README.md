@@ -24,6 +24,14 @@ Displays a standardised loader <br />
 Displays a loader inside a button<br />
 ![Image of button loader](https://raw.githubusercontent.com/kinnarps/KIN/master/ui/resources/KIN_ui_button_loader.gif)
 
+#### Methods
+* `display` : Displays the loader
+* `destroy` : Removs the loader
+
+#### Configuration
+* `element` : Button element that should display the loader
+* `theme` : Default white, valid options is lemon-yellow, flamingo-pink, chili-red, spring-green and kin-black
+
 #### Example
 ```html
 <a href="javascript:void(0)" class="btn btn-default"><span class="button__text">My button text</span></a>
