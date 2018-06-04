@@ -33,6 +33,7 @@ Displays a loader inside a button<br />
 * `theme` : Default white, valid options is lemon-yellow, flamingo-pink, chili-red, spring-green and kin-black
 
 #### Example
+Note that the button should contain a span element with the class button__text containing the text.
 ```html
 <a href="javascript:void(0)" class="btn btn-default"><span class="button__text">My button text</span></a>
 
