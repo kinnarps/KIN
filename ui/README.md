@@ -24,7 +24,7 @@ Displays a loader inside a button<br />
 ![Image of loader](https://raw.githubusercontent.com/kinnarps/KIN/master/ui/resources/KIN_ui_button_loader.PNG)
 
 #### Example
-```
+```html
 <a href="javascript:void(0)" class="btn btn-default"><span class="button__text">My button text</span></a>
 
 <script>
