@@ -28,18 +28,17 @@ Displays a loader inside a button
 
 <script>
 $(document).ready(function(){
-  $(".btn-default").on("click",function(){
-    KIN.ui.button_loader.display({
-      element:this,
-      theme:"kin-black"
-    });
-  });
+	$(".btn-default").on("click",function(){
+		KIN.ui.button_loader.display({
+			element:this,
+			theme:"kin-black"
+		});
+	});
   
-  /* Do something */
-  KIN.ui.button_loader.destroy({  
-				element:'.button-element'
+  	/* Do something */
+	KIN.ui.button_loader.destroy({  
+		element:'.button-element'
 	})
-  
 });
 </script>
 
