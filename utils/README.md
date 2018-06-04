@@ -33,6 +33,7 @@ KIN.utils.confirm_custom({
 ```
 
 ## KIN.utils.initGallery
+Creates a gallery from element selector
 
 #### Example
 ```HTML
