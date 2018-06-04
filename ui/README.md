@@ -11,9 +11,13 @@ Displays a standardised loader <br />
 * `show` : Displays the loader
 * `destroy` : Removs the loader
 
+#### Configuration
+* `text` : Text to display 
+* `width` : Width of loader box, default 100% (needs unit %, px etc)
+
 #### Example
 ```javascript
-  KIN.ui.page_loader.show({text:"Your loading text"})
+  KIN.ui.page_loader.show({text:"Your loading text",width:"10%"})
   
   /* Do your stuff */ 
   
