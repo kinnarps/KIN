@@ -38,7 +38,7 @@ $(document).ready(function(){
   	/* Do something */
 	KIN.ui.button_loader.destroy({  
 		element:'.button-element'
-	})
+	});
 });
 </script>
 
