@@ -33,3 +33,15 @@ KIN.utils.confirm_custom({
 ```
 
 ## KIN.utils.initGallery
+
+#### Example
+```HTML
+<a href="image01.jpg" class="js-gallery"><img src="thumb_image01.jpg" ></a>
+<a href="image02.jpg" class="js-gallery">View image</a>
+
+<script>
+$(document).ready(function{
+	KIN.utils.initGallery(".js-gallery");
+})
+</script>
+```
