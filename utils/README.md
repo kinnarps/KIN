@@ -1,6 +1,6 @@
 # KIN.utils
 
-[KIN.utils.slide_panel](#kinutilsslide_panel)<br />
+[KIN.utils.slidepanel](#kinutilsslide_panel)<br />
 [KIN.utils.confirm_custom](#kinutilsconfirm_custom)<br />
 [KIN.utils.initGallery](#kinutilsinitgallery)
 
