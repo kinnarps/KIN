@@ -151,7 +151,7 @@ $(document).ready(function(){
 })
 ```
 
-## Example saving states to a search input field
+## Example create and show a panel with additional data below each row
 ```javascript
 function formatSlide(obj){
 	/* Format a column to be clickable to show additional data */
