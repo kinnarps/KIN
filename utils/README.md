@@ -4,7 +4,7 @@
 [KIN.utils.confirm_custom](#kinutilsconfirm_custom)<br />
 [KIN.utils.initGallery](#kinutilsinitgallery)
 
-## KIN.utils.slide_panel
+## KIN.utils.slidepanel
 Slides in a panel
 
 #### Parameters
