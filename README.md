@@ -10,5 +10,6 @@ Reusable internal webcomponents
 * [KIN.ui.button_loader](https://github.com/kinnarps/KIN/tree/master/ui#kinuipage_loader)
 
 ## KIN.utils
+* [KIN.utils.slidepanel](https://github.com/kinnarps/KIN/tree/master/utils#kinutilsslidepanel)
 * [KIN.utils.confirm_custom](https://github.com/kinnarps/KIN/tree/master/utils#kinutilsconfirm_custom)
 * [KIN.utils.initGallery](https://github.com/kinnarps/KIN/tree/master/utils#kinutilsinitgallery)
