@@ -20,7 +20,7 @@ Slides in a panel
 * `setcontent` : Sets the content in the panel
 
 #### Example
-```HTML
+```javascript
 var slider = KIN.utils.slidepanel({
 	element:".mypanelwrapper", 
 	direction:3  
