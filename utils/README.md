@@ -1,7 +1,27 @@
 # KIN.utils
 
+[KIN.utils.slide_panel](#kinutilsslide_panel)<br />
 [KIN.utils.confirm_custom](#kinutilsconfirm_custom)<br />
 [KIN.utils.initGallery](#kinutilsinitgallery)
+
+## KIN.utils.slide_panel
+Slides in a panel
+
+#### Parameters
+* `element` : Wrapper element for the slider
+* `direction` : 0 = Slide in from top, 1 = right (default), 2 = bottom, 3 = left
+
+#### Methods
+* `toggle` : Toggles the slider to animate in or out
+* `display` : Displays the slider
+* `hide` : Hides the slider
+* `destroy` : Removes the slider from the DOM
+* `settitle` : Sets the title in the panel
+* `setcontent` : Sets the content in the panel
+
+#### Example
+```HTML
+```
 
 ## KIN.utils.confirm_custom
 
@@ -13,6 +33,7 @@ Displays a standardised popup modal that can be used for informational message o
 * `onOk` : required callback function to trigger on ok
 * `onCancel` : optional callback function to trigger on cancel, if parameter is omitted no cancel button will be added to the popup
 
+#### Example
 ```javascript
 KIN.utils.confirm_custom({
 	content : {
