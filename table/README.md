@@ -150,3 +150,21 @@ $(document).ready(function(){
 	})
 })
 ```
+
+## Example saving states to a search input field
+```javascript
+function formatSlide(obj){
+	/* Format a column to be clickable to show additional data */
+	return '<a href="javascript:void(0)" class="js-view-row-data" data-row="'+obj.row+'">X</a>';
+}
+	
+$(document).on("click",".js-view-row-data",function(){
+	var row = $(this).data("row");
+	/* Get some additional data and parse 
+	...
+	...
+	*/	
+	/* Display*/
+	$("#"+row).next("div").html(someHtml).toggleClass("hidden")
+})
+```
