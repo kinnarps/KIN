@@ -8,8 +8,8 @@
 Slides in a panel
 
 #### Parameters
-* `element` : Wrapper element for the slider
-* `direction` : 0 = Slide in from top, 1 = right (default), 2 = bottom, 3 = left
+* `element` : Wrapper element for the slider (required)
+* `direction` : 0 = Slide in from top, 1 = right (default), 2 = bottom, 3 = left (optional)
 
 #### Methods
 * `toggle` : Toggles the slider to animate in or out
@@ -21,6 +21,21 @@ Slides in a panel
 
 #### Example
 ```HTML
+var slider = KIN.utils.slidepanel({
+	element:".mypanelwrapper", 
+	direction:3  
+});
+	
+slider.settitle("Slider title");
+slider.setcontent("This is my content");
+
+$(".someClass").on("click",function(){
+	slider.destroy();
+});
+
+$(".someClass").on("click",function(){   
+	slider.display()
+})
 ```
 
 ## KIN.utils.confirm_custom
