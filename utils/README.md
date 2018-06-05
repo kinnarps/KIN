@@ -16,8 +16,8 @@ Slides in a panel
 * `display` : Displays the slider
 * `hide` : Hides the slider
 * `destroy` : Removes the slider from the DOM
-* `settitle` : Sets the title in the panel
-* `setcontent` : Sets the content in the panel
+* `settitle(string)` : Sets the title in the panel
+* `setcontent(string)` : Sets the content in the panel
 
 #### Example
 ```javascript
