@@ -18,7 +18,7 @@
 * `addstatetourl` : Will add each sessionStorage object as a parameter to your dataurl if set to true.
 
 ## Description of column object
-* `type`	: Option 1 string value column,2 Sortable column, Option 3 action menu column
+* `type`	: Option 1 string value column,2 Sortable column, 3 action menu column,4 adds a slide down arrow to display additional information. See example
 * `columnname`	: Header name of column
 * `columnwidth`	: Width of column, uses bootstrap responsive columns. All columns must sum up to a value of maximum of 12
 * `datafield`	: Name of data field to be used as a value
