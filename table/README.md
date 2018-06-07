@@ -36,7 +36,7 @@ Option 2 for column type will add two additional parameters to KIN.table.urlpara
 * `sortdirection`: Parameter containing either asc or desc depening on which arrow the user clicked on
 
 ## Description of toggle panel column
-Option 4 for column type will add an expandable panel below each row. Same as option type 1 except it will need a callback function for populating the panel with data. Important that the callback function is sent as a string. See exampel below.
+Option 4 for column type will add an expandable panel below each row. Same as option type 1 except it will need a callback function for populating the panel with data. Important that the callback function is sent as a string. See [example](#example-create-and-show-a-panel-with-additional-data-below-each-row) below.
 * `panelcallback` : The callback that should be called, must be a string.
 
 ## Methods
