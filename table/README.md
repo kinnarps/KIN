@@ -35,6 +35,10 @@ Option 2 for column type will add two additional parameters to KIN.table.urlpara
 * `sortby`	: Parameter that contains the column data name
 * `sortdirection`: Parameter containing either asc or desc depening on which arrow the user clicked on
 
+## Description of toggle panel column
+Option 4 for column type will add an expandable panel below each row. Same as option type 1 except it will need a callback function for populating the panel with data. Important that the callback function is sent as a string. See exampel below.
+* `panelcallback` : The callback that should be called, must be a string.
+
 ## Methods
 * `KIN.table.update` : Re-paints the table
 * `KIN.table.addurlparameter(key,value)` : Adds additional parameters to the update request
@@ -153,18 +157,21 @@ $(document).ready(function(){
 
 ## Example create and show a panel with additional data below each row
 ```javascript
-function formatSlide(obj){
-	/* Format a column to be clickable to show additional data */
-	return '<a href="javascript:void(0)" class="js-view-row-data" data-row="'+obj.row+'">X</a>';
+function printthepanel(callbackobj){
+	//The callbackobj contains the current rows data item, panelwrapper element selector for inserting html inside the panel and the row id for the current row
+	var id = (obj.rowid + 1)
+	$.get("https://jsonplaceholder.typicode.com/albums/"+id,function(data){
+		$(obj.panelwrapper).html(data.title)
+	})
 }
-	
-$(document).on("click",".js-view-row-data",function(){
-	var row = $(this).data("row");
-	/* Get some additional data and parse 
-	...
-	...
-	*/	
-	/* Display*/
-	$("#"+row).next("div").html(someHtml).toggleClass("hidden")
+
+$(document).ready(function(){
+	var table = KIN.table.init({
+		wrapperelement	 	: ".custom-table",
+		dataurl			: "<%= getPublishedContentUrl %>",
+		columns : [
+			{"type": "4", "columnname":"Title", "columnwidth":"2", "datafield":"title",panelcallback:"printthepanel"},
+		]
+	})
 })
 ```
