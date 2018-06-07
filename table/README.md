@@ -16,7 +16,7 @@
 * `afterupdate`	: Callback to be executed after updating table, contains the response object
 * `savestate`	: boolean should table state (paginator,hitsperpage) be saved in sessionStorage
 * `addstatetourl` : Will add each sessionStorage object as a parameter to your dataurl if set to true.
-* `onselect` : Callback to be executed when cheking and unchecking a checkbox when selectable is set to true for a column. Row data is sent as parameter.
+* `onselect` : Callback to be executed when checking and unchecking a checkbox when selectable is set to true for a column. Row data is sent as parameter.
 
 
 ## Description of column object
