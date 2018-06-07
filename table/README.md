@@ -23,6 +23,7 @@
 * `columnwidth`	: Width of column, uses bootstrap responsive columns. All columns must sum up to a value of maximum of 12
 * `datafield`	: Name of data field to be used as a value
 * `formatter`	: Callback function for formatting the column value with additional formatting.
+* `selectable`	: Default false, inserts a checkbox in the column
 
 ## Description of action object
 * `title`	: Action title
