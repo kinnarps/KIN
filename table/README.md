@@ -68,13 +68,14 @@ var table = KIN.table.init({
 	beforeupdate		: function(){/*Before table is updated, set state and urlparameters for example*/},
 	afterupdate		: function(data){},
 	ondataloaded		: function(data){},
+	onselect		: function(data){},
 	rowformatter		: function(rowobject,rowdata){},
 	columns : [
-			{"type": "1", "columnname":"Title", "columnwidth":"2", "datafield":"title",formatter : formatTitleCol},
-			{"type": "2", "columnname":"Publish date", "columnwidth":"2", "datafield":"publishDate"},
-			{"type": "2", "columnname":"Modified date", "columnwidth":"3", "datafield":"modifiedDate"},
-			{"type": "1", "columnname":"Type", "columnwidth":"3", "datafield":"structureName"},
-			{"type": "3", "columnname":"", "columnwidth":"2"}
+		{"type": "1", "columnname":"Title", "columnwidth":"2", "datafield":"title",formatter : formatTitleCol,selectable:true},
+		{"type": "2", "columnname":"Publish date", "columnwidth":"2", "datafield":"publishDate"},
+		{"type": "2", "columnname":"Modified date", "columnwidth":"3", "datafield":"modifiedDate"},
+		{"type": "1", "columnname":"Type", "columnwidth":"3", "datafield":"structureName"},
+		{"type": "3", "columnname":"", "columnwidth":"2"}
 	],
 	actions : [
 		{"title": '<liferay-ui:message key="edit" />', parameter: "$[editUrl]", "icon": "icon-edit",callback:editArticle},
