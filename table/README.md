@@ -159,6 +159,11 @@ $(document).ready(function(){
 ```javascript
 function printthepanel(callbackobj){
 	//The callbackobj contains the current rows data item, panelwrapper element selector for inserting html inside the panel and the row id for the current row
+	
+	/*Data from row item*/
+	$(obj.panelwrapper).html(item.title)
+	
+	/*Remote data*/
 	var id = (obj.rowid + 1)
 	$.get("https://jsonplaceholder.typicode.com/albums/"+id,function(data){
 		$(obj.panelwrapper).html(data.title)
