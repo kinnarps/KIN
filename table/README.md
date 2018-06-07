@@ -169,7 +169,7 @@ function printthepanel(callbackobj){
 	
 	/*Remote data*/
 	var id = (obj.rowid + 1)
-	$.get("https://jsonplaceholder.typicode.com/albums/"+id,function(data){
+	$.get("https://sekinitutv01.kinnarps.com:3000/albums/"+id,function(data){
 		$(obj.panelwrapper).html(data.title)
 	})
 }
