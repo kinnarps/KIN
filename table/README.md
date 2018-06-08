@@ -169,7 +169,7 @@ function printthepanel(callbackobj){
 	
 	/*Remote data*/
 	var id = (obj.rowid + 1)
-	$.get("https://jsontest.kinnarps.com/albums/"+id,function(data){
+	$.get("https://sekinitutv01.kinnarps.com/json/posts/"+id,function(data){
 		$(obj.panelwrapper).html(data.title)
 	})
 }
