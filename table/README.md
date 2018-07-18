@@ -225,7 +225,7 @@ $(document).ready(function(){
 ```
 
 ## Output
-Given the following arguments (and assuming `dataurl` gives a response with the data fields we need - see (data.json)[data.json] for an example response):
+Given the following arguments (and assuming `dataurl` gives a response with the data fields we need - see [data.json](https://github.com/kinnarps/KIN/blob/master/table/data.json) for an example response):
 
 ```javascript
 {
@@ -258,7 +258,7 @@ KIN.table will output roughly the following HTML into the `#wrapper` element:
     </div>
   </div>
 </div>
-<div class="KIN_table_body  density-narrow">
+<div class="KIN_table_body small density-narrow">
   <div class="row table-row row_0" data-id="row_0">
     <div class="col-md-6">
       <p>Example title</p>
@@ -289,10 +289,10 @@ KIN.table will output roughly the following HTML into the `#wrapper` element:
   <div class="hitsPerPageWrapper">
     <span>Hits per page</span>
     <select name="KIN_table_hitsperpage_[randomly generated unique ID]" class="KIN_table_hitsperpage no-print" style="margin-left:1ex">
-	    <option value="10">10</option>
-	    <option value="20" selected>20</option>
-	    <option value="50">50</option>
-	    <option value="100">100</option>
+        <option value="10">10</option>
+        <option value="20" selected>20</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
       <option value="250">250</option>
     </select>
   </div>
