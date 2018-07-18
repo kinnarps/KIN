@@ -1,7 +1,7 @@
 # KIN.table
 
 ## Description of parameters
-* `wrapperelement`: String containing element selector of where to put the table
+* `wrapperelement`: String containing element selector of where to put the table. Required if initializing using the global object, not used if initializing with the jQuery method.
 * `dataurl` 	: Url for fetching table data (see [data.json](https://github.com/kinnarps/KIN/blob/master/table/data.json))
 * `hitsperpage` : Number of hits per page
 * `stylesize`	: String "small" smaller row font
@@ -39,24 +39,30 @@ Option 2 for column type will add two additional parameters to KIN.table.urlpara
 * `sortdirection`: Parameter containing either asc or desc depening on which arrow the user clicked on
 
 ## Description of toggle panel column
-Option 4 for column type will add an expandable panel below each row. Same as option type 1 except it will need a callback function for populating the panel with data. Important that the callback function is sent as a string. See [example](#example-create-and-show-a-panel-with-additional-data-below-each-row) below.
+Option 4 for column type will add an expandable panel below each row. Same as option type 1 except it will need a callback function for populating the panel with data. Important that the callback function is sent as a string - it can't be an anonymous function expression. See [example](#example-create-and-show-a-panel-with-additional-data-below-each-row) below.
 * `panelcallback` : The callback that should be called, must be a string and be defined in global scope.
 
 ## Methods
-* `KIN.table.update` : Re-paints the table
+When you initialize your table the jQuery way (see examples and Things to note below), prefix these with the wrapper DOM element you initialized the table on, so for example `$(selector).get(0).KIN.table.update()`.
+* `KIN.table.update()` : Re-paints the table
 * `KIN.table.addurlparameter(key,value)` : Adds additional parameters to the update request
 * `KIN.table.removeurlparameter(key)`
-* `KIN.table.addstatevalue(key,value)` : Adds additional parameters to the table statae sessionStorage object
+* `KIN.table.addstatevalue(key,value)` : Adds additional parameters to the table state sessionStorage object
 * `KIN.table.removestatevalue(key)`
 
 ## Properties
+As per above, if using the jQuery way, prefix these with the wrapper DOM element.
 * `KIN.table.urlparameters` : Custom parameter object
 * `KIN.table.statevalues` : Session storage object
 
+## Things to note
+* There are two ways to initialize a table, the "jQuery way" and the "global object way". The global object way is fine if you only need one table in a page, but it can't handle more than one table very well. To have multiple tables, you need to use the jQuery way.
+* The pagination starts counting pages at 1, not 0.
+* When using the jQuery way, the KIN.table object and methods are attached to _each DOM element,_ not the _jQuery object._ You should write `$(selector)[0].KIN.table.update()`, or `$(selector).each(function(){ this.KIN.table.update(); })`, or `document.getElementById('selector-id').KIN.table.update()` or something similar - `$(selector).KIN.table` will be undefined!
+
 ## Example 
 ```javascript
-var table = KIN.table.init({
-	wrapperelement	 	: ".custom-table",
+var args = {
 	dataurl			: "<%= getPublishedContentUrl %>",
 	hitsperpage		: 25,
 	stylesize		: 'small',
@@ -81,9 +87,15 @@ var table = KIN.table.init({
 		{"title": '<liferay-ui:message key="edit" />', parameter: "$[editUrl]", "icon": "icon-edit",callback:editArticle},
 		{"title": '<liferay-ui:message key="delete" />', parameter: {articleId:"$[articleId]",groupId:"$[groupId]"},"icon": "icon-trash", callback:deleteArticle},
 		{"title": '<liferay-ui:message key="open" />', parameter: {personType:"Supplier",url:"$[viewurl]",title:"$[title]"}, "icon": "icon-search",callback:openurl},
-  			
 	],
-})
+}
+
+// ### jQuery way ### 
+$('.custom-table').KIN_table(args);
+
+// ### global object way ###
+args.wrapperelement = ".custom-table";
+var table = KIN.table.init(args);
 
 
 /*Example of a callback formatter function*/
@@ -114,6 +126,13 @@ function deleteArticle(parameters){
 
 $(document).on("change","#some-element",function(){		
 		/*This will add some temporary parameters to the table update request*/
+		
+		// ### jQuery way ###
+		$('.custom-table')[0].KIN.table.urlparameters.status = "some-value"; 		
+		$('.custom-table')[0].KIN.table.urlparameters.searchKey = "some-value";
+		$('.custom-table')[0].KIN.table.update();
+		
+		// ### global object way ###
 		KIN.table.urlparameters.status = "some-value"; 		
 		KIN.table.urlparameters.searchKey = "some-value";
 		KIN.table.update();
@@ -129,19 +148,26 @@ Note that if you set addstatetourl to true you dont have to use addurlparameter 
 $(document).ready(function(){
 	$("#my-content-search").on("keyup",function(e){
 		if($(this).val().length > 3){					
-			//Add my search key to the session storage
-			KIN.table.statevalues.searchKey = $("#my-content-search").val();
+			// ### jQuery way ###
+			$('.custom-table')[0].KIN.table.statevalues.searchKey = $("#my-content-search").val(); //Add my search key to the session storage
+			$('.custom-table')[0].KIN.table.update(); //Update table
 			
-			//Update table
-			KIN.table.update();
+			// ### global object way ###
+			KIN.table.statevalues.searchKey = $("#my-content-search").val(); //Add my search key to the session storage
+			KIN.table.update(); //Update table
+			
 		}else if ($(this).val().length == 0){
+			// ### jQuery way ###
+			$('.custom-table')[0].KIN.table.statevalues.searchKey = '';
+			$('.custom-table')[0].KIN.table.update();
+		
+			// ### global object way ###
 			KIN.table.statevalues.searchKey = '';
 			KIN.table.update();
 		}
 	});
 	
-	var table = KIN.table.init({
-		wrapperelement	 	: ".custom-table",
+	var args = {
 		dataurl			: "<%= getPublishedContentUrl %>",
 		savestate		: true,
 		addstatetourl		: true,
@@ -155,7 +181,14 @@ $(document).ready(function(){
 		columns : [
 					{"type": "1", "columnname":"Title", "columnwidth":"2", "datafield":"title"},
 		]
-	})
+	};
+	
+	// ### jQuery way ###
+	$('.custom-table').KIN_table(args);
+	
+	// ### global object way ###
+	args.wrapperelement = '.custom-table';
+	var table = KIN.table.init(args);
 })
 ```
 
@@ -175,12 +208,110 @@ function printthepanel(callbackobj){
 }
 
 $(document).ready(function(){
-	var table = KIN.table.init({
+	var args = {
 		wrapperelement	 	: ".custom-table",
 		dataurl			: "<%= getPublishedContentUrl %>",
 		columns : [
 			{"type": "4", "columnname":"Title", "columnwidth":"2", "datafield":"title",panelcallback:"printthepanel"},
 		]
-	})
+	};
+	
+	// ### jQuery way ###
+	$('.custom-table').KIN_table(args);
+	
+	// ### global object way ###
+	var table = KIN.table.init(args);
 })
+```
+
+## Output
+Given the following arguments (and assuming `dataurl` gives a response with the data fields we need - see (data.json)[data.json] for an example response):
+
+```javascript
+{
+	wrapperelement	 	: "#wrapper",
+	dataurl			: "<%= getContentUrl %>",
+	hitsperpage		: 20,
+	stylesize		: 'small',
+	density			: 'narrow',
+	columns : [
+		{"type": "1", "columnname":"Title", "columnwidth":"6", "datafield": "title"},
+		{"type": "1", "columnname":"Date", "columnwidth":"3", "datafield": "publishDate"},
+		{"type": "1", "columnname":"Type", "columnwidth":"3", "datafield": "structureName"}
+	]
+}
+```
+
+KIN.table will output roughly the following HTML into the `#wrapper` element:
+
+```html
+<div class="KIN_table_header">
+  <div class="row table-header">
+    <div class="col-md-6">
+      <p>Title</p>
+    </div>
+    <div class="col-md-3">
+      <p>Date</p>
+    </div>
+    <div class="col-md-3">
+      <p>Type</p>
+    </div>
+  </div>
+</div>
+<div class="KIN_table_body  density-narrow">
+  <div class="row table-row row_0" data-id="row_0">
+    <div class="col-md-6">
+      <p>Example title</p>
+    </div>
+    <div class="col-md-3">
+      <p>2017-08-20</p>
+    </div>
+    <div class="col-md-3">
+      <p>Article</p>
+    </div>
+    <div class="hidden KIN_table_info_slide KIN_table_panel_wrapper_row_0"></div>
+  </div>
+  <div class="row table-row row_1" data-id="row_1">
+    <div class="col-md-6">
+      <p>Another example</p>
+    </div>
+    <div class="col-md-3">
+      <p>2018-01-02</p>
+    </div>
+    <div class="col-md-3">
+      <p>Blog</p>
+    </div>
+    <div class="hidden KIN_table_info_slide KIN_table_panel_wrapper_row_1"></div>
+  </div>
+  [... and so on]
+</div>
+<div class="KIN_table_footer">
+  <div class="hitsPerPageWrapper">
+    <span>Hits per page</span>
+    <select name="KIN_table_hitsperpage_[randomly generated unique ID]" class="KIN_table_hitsperpage no-print" style="margin-left:1ex">
+	    <option value="10">10</option>
+	    <option value="20" selected>20</option>
+	    <option value="50">50</option>
+	    <option value="100">100</option>
+      <option value="250">250</option>
+    </select>
+  </div>
+  <div class="simple-pagination no-print light-theme">
+    <ul>
+      <li class="disabled">
+        <span class="current prev">Prev</span>
+      </li>
+      <li class="active">
+        <span class="current">1</span>
+      </li>
+      <li>
+        <a href="2" class="page-link">2</a>
+      </li>
+      [... and so on]
+      <li>
+        <a href="2" class="page-link next">Next</a>
+      </li>
+    </ul>
+  </div>
+</div>
 ```
