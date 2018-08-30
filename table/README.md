@@ -14,6 +14,7 @@
 * `actions`	: Array of objects containing row actions
 * `beforeupdate`: Callback to be executed before updating table
 * `afterupdate`	: Callback to be executed after updating table, contains the response object
+* `postrender`	: Callback that always executes after rendering, both after loading and update
 * `savestate`	: boolean should table state (paginator,hitsperpage) be saved in sessionStorage
 * `addstatetourl` : Will add each sessionStorage object as a parameter to your dataurl if set to true.
 * `onselect` : Callback to be executed when checking and unchecking a checkbox when selectable is set to true for a column. Row data is sent as parameter.
@@ -49,6 +50,7 @@ When you initialize your table the jQuery way (see examples and Things to note b
 * `KIN.table.removeurlparameter(key)`
 * `KIN.table.addstatevalue(key,value)` : Adds additional parameters to the table state sessionStorage object
 * `KIN.table.removestatevalue(key)`
+* `KIN.table.getstatevalue(key)`
 
 ## Properties
 As per above, if using the jQuery way, prefix these with the wrapper DOM element.
@@ -149,20 +151,20 @@ $(document).ready(function(){
 	$("#my-content-search").on("keyup",function(e){
 		if($(this).val().length > 3){					
 			// ### jQuery way ###
-			$('.custom-table')[0].KIN.table.statevalues.searchKey = $("#my-content-search").val(); //Add my search key to the session storage
+			$('.custom-table')[0].KIN.table.addstatevalue("searchKey",$("#my-content-search").val()); //Add my search key to the session storage
 			$('.custom-table')[0].KIN.table.update(); //Update table
 			
 			// ### global object way ###
-			KIN.table.statevalues.searchKey = $("#my-content-search").val(); //Add my search key to the session storage
+			KIN.table.addstatevalue("searchKey",$("#my-content-search").val()); //Add my search key to the session storage
 			KIN.table.update(); //Update table
 			
 		}else if ($(this).val().length == 0){
 			// ### jQuery way ###
-			$('.custom-table')[0].KIN.table.statevalues.searchKey = '';
+			$('.custom-table')[0].KIN.table.removestatevalue('searchKey');
 			$('.custom-table')[0].KIN.table.update();
 		
 			// ### global object way ###
-			KIN.table.statevalues.searchKey = '';
+			KIN.table.removestatevalue('searchKey');
 			KIN.table.update();
 		}
 	});
@@ -174,7 +176,7 @@ $(document).ready(function(){
 		ondataloaded		: function(data){
 						//Get my custom saved state value from sessionStorage and set value of the search field
 						if(((table || {}).tablestate || {}).searchKey){
-							$("#my-content-search").val(table.tablestate.searchKey)
+							$("#my-content-search").val(table.getstatevalue('searchKey'))
 						}
 						return data;/*Init callback when data is loaded*/
 					},
