@@ -62,4 +62,4 @@ $(document).ready(function(){
 
 ## KIN.ui.snackbar
 Provide a brief messages about app processes at the bottom of the screen <br />
-![Image of page loader](https://raw.githubusercontent.com/kinnarps/KIN/master/ui/resources/snackbar1.png)
+![Image of page loader](https://github.com/kinnarps/KIN/blob/master/ui/resources/snackbar1.PNG)
