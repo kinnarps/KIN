@@ -63,3 +63,14 @@ $(document).ready(function(){
 ## KIN.ui.snackbar
 Provide a brief messages about app processes at the bottom of the screen <br />
 ![Image of page loader](https://github.com/kinnarps/KIN/blob/master/ui/resources/snackbar1.PNG)
+
+#### Methods
+* `display` : Displays the snackbar
+* `hide` : Hides the snackbar
+* `destroy` : Removes the snackbar from dom
+* `setcontent` : Sets information message
+
+#### Configuration
+* `autohide` : Default true. If snackbar shoud auto dissapear or action is needed
+* `action.text` : Action text
+* `action.callback` : Action callback function
