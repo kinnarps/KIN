@@ -1,7 +1,8 @@
 # KIN.ui
 
 [KIN.ui.page_loader](#kinuipage_loader)<br />
-[KIN.ui.button_loader](#kinuibutton_loader)
+[KIN.ui.button_loader](#kinuibutton_loader)<br />
+[KIN.ui.snackbar](#kinuisnackbar)
 
 ## KIN.ui.page_loader
 Displays a standardised loader <br />
@@ -58,3 +59,5 @@ $(document).ready(function(){
 </script>
 
 ```
+
+## KIN.ui.snackbar
