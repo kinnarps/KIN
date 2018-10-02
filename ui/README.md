@@ -61,7 +61,7 @@ $(document).ready(function(){
 ```
 
 ## KIN.ui.snackbar
-Provide a brief messages about app processes at the bottom of the screen <br />
+Provide a brief messages about app processes at the bottom of the screen. If you provide a message the snackbar will require a user action before disappearing <br />
 ![Image of page loader](https://github.com/kinnarps/KIN/blob/master/ui/resources/snackbar1.PNG)
 
 #### Methods
