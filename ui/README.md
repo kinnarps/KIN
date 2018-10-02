@@ -71,19 +71,19 @@ Provide a brief messages about app processes at the bottom of the screen <br />
 * `setcontent` : Sets information message
 
 #### Configuration
-* `autohide` : Default true. If snackbar shoud auto dissapear or action is needed
+* `autohide` : Default true. If snackbar shoud auto disappear or action is needed
 * `action.text` : Action text
 * `action.callback` : Action callback function
 
 #### Example
-Note that the button should contain a span element with the class button__text containing the text.
+Methods is chainable
 ```html
-<a href="javascript:void(0)" class="btn btn-default"><span class="button__text">My button text</span></a>
-
 <script>
 var snackbar;
 $(document).ready(function(){
-	snackbar = KIN.ui.snackbar({action:{text:'Action',callback:mySnackbarCallback}}).setcontent("Single-line message with action.").display();
+	snackbar = KIN.ui.snackbar({action:{text:'Action',callback:mySnackbarCallback}})
+	.setcontent("Single-line message with action.")
+	.display();
 });
 function mySnackbarCallback(){
 	/* Do something */
