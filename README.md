@@ -9,6 +9,7 @@ Reusable internal webcomponents
 * [KIN.ui.page_loader](https://github.com/kinnarps/KIN/tree/master/ui#kinuipage_loader)
 * [KIN.ui.button_loader](https://github.com/kinnarps/KIN/tree/master/ui#kinuipage_loader)
 * [KIN.ui.snackbar](https://github.com/kinnarps/KIN/tree/master/ui#kinuisnackbar)
+* [KIN.ui.chip](https://github.com/kinnarps/KIN/tree/master/ui#kinuichip)
 
 
 ## KIN.utils
@@ -16,8 +17,3 @@ Reusable internal webcomponents
 * [KIN.utils.confirm_custom](https://github.com/kinnarps/KIN/tree/master/utils#kinutilsconfirm_custom)
 * [KIN.utils.initGallery](https://github.com/kinnarps/KIN/tree/master/utils#kinutilsinitgallery)
 * [KIN.utils.getParameterByName](https://github.com/kinnarps/KIN/blob/master/utils/README.md#kinutilsgetparameterbynameparameternameurl)
-
-
-
-
-

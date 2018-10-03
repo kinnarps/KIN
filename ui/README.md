@@ -2,7 +2,8 @@
 
 [KIN.ui.page_loader](#kinuipage_loader)<br />
 [KIN.ui.button_loader](#kinuibutton_loader)<br />
-[KIN.ui.snackbar](#kinuisnackbar)
+[KIN.ui.snackbar](#kinuisnackbar)<br />
+[KIN.ui.chip](#kinuichip)
 
 ## KIN.ui.page_loader
 Displays a standardised loader <br />
@@ -13,15 +14,15 @@ Displays a standardised loader <br />
 * `destroy` : Removs the loader
 
 #### Configuration
-* `text` : Text to display 
+* `text` : Text to display
 * `width` : Width of loader box, default 100% (needs unit %, px etc)
 
 #### Example
 ```javascript
   KIN.ui.page_loader.show({text:"Your loading text",width:"10%"})
-  
-  /* Do your stuff */ 
-  
+
+  /* Do your stuff */
+
   KIN.ui.page_loader.destroy()  
 ```
 
@@ -49,7 +50,7 @@ $(document).ready(function(){
 			element:this,
 			theme:"kin-black"
 		});
-		
+
 		/* Do something */
 		KIN.ui.button_loader.destroy({  
 			element:'.button-element'
@@ -91,3 +92,5 @@ function mySnackbarCallback(){
 </script>
 
 ```
+## KIN.ui.chip
+Compact element that represents an attribute or action <br />
