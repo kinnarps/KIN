@@ -15,3 +15,9 @@ Reusable internal webcomponents
 * [KIN.utils.slidepanel](https://github.com/kinnarps/KIN/tree/master/utils#kinutilsslidepanel)
 * [KIN.utils.confirm_custom](https://github.com/kinnarps/KIN/tree/master/utils#kinutilsconfirm_custom)
 * [KIN.utils.initGallery](https://github.com/kinnarps/KIN/tree/master/utils#kinutilsinitgallery)
+* [KIN.utils.getParameterByName](https://github.com/kinnarps/KIN/blob/master/utils/README.md#kinutilsgetparameterbynameparameternameurl)
+
+
+
+
+
