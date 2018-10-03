@@ -82,3 +82,12 @@ $(document).ready(function{
 })
 </script>
 ```
+
+## KIN.utils.getParameterByName(parametername,url)
+Extracts parameter value from url
+#### Example
+```HTML
+<script>
+var parametervalue = KIN.utils.getParameterByName(parametername,url);
+</script>
+```
