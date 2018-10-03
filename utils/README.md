@@ -2,7 +2,7 @@
 
 [KIN.utils.slidepanel](#kinutilsslide_panel)<br />
 [KIN.utils.confirm_custom](#kinutilsconfirm_custom)<br />
-[KIN.utils.initGallery](#kinutilsinitgallery)
+[KIN.utils.initGallery](#kinutilsinitgallery)<br />
 [KIN.utils.getParameterByName](#kinutilsgetparameterbynameparameternameurl)
 
 ## KIN.utils.slidepanel
