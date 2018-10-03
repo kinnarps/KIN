@@ -8,6 +8,8 @@ Reusable internal webcomponents
 ## KIN.ui
 * [KIN.ui.page_loader](https://github.com/kinnarps/KIN/tree/master/ui#kinuipage_loader)
 * [KIN.ui.button_loader](https://github.com/kinnarps/KIN/tree/master/ui#kinuipage_loader)
+* [KIN.ui.snackbar](https://github.com/kinnarps/KIN/tree/master/ui#kinuisnackbar)
+
 
 ## KIN.utils
 * [KIN.utils.slidepanel](https://github.com/kinnarps/KIN/tree/master/utils#kinutilsslidepanel)
