@@ -11,6 +11,8 @@ Slides in a panel
 #### Parameters
 * `element` : Wrapper element for the slider (required)
 * `direction` : 0 = Slide in from top, 1 = right (default), 2 = bottom, 3 = left (optional)
+* `width` : Width of panel
+* `onafterclose` : Callback function after panel is closed
 
 #### Methods
 * `toggle` : Toggles the slider to animate in or out
@@ -19,14 +21,15 @@ Slides in a panel
 * `destroy` : Removes the slider from the DOM
 * `settitle(string)` : Sets the title in the panel
 * `setcontent(string)` : Sets the content in the panel
+* `isvisible` : Returns true or false
 
 #### Example
 ```javascript
 var slider = KIN.utils.slidepanel({
-	element:".mypanelwrapper", 
+	element:".mypanelwrapper",
 	direction:3  
 });
-	
+
 slider.settitle("Slider title");
 slider.setcontent("This is my content");
 
