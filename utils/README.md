@@ -25,6 +25,8 @@ Slides in a panel
 
 #### Example
 ```javascript
+<div class="mypanelwrapper"></div> <!-- You can also have predefined content inside your wrapper -->
+<script>
 var slider = KIN.utils.slidepanel({
 	element:".mypanelwrapper",
 	direction:3  
@@ -40,6 +42,7 @@ $(".someClass").on("click",function(){
 $(".someClass").on("click",function(){   
 	slider.display()
 })
+</script>
 ```
 
 ## KIN.utils.confirm_custom
